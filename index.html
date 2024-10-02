@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <base href="/Portfolio/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Hello, my name is ismail ibrahim, and this is my portfolio. Please check it out!">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Ismail Ibrahim">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>Ismail Ibrahim</title>
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    .loading-dot-container{
+height:100vh;
+width: 100%;
+position: absolute;
+left: 0;
+top: 0;
+justify-content: center;
+display: grid;
+
+align-items: center;
+}
+.loading-dot-container > * {
+grid-row: 1;
+grid-column: 1;
+}
+
+@keyframes dotLengthAnimation{
+from{
+width: 10vw;
+}
+to{
+width: 30vw;
+}
+
+}
+@keyframes dotHeightAnimation{
+from{
+height: 10vw;
+border-radius: 5vw;
+}
+to{
+height: 30vw;
+border-radius: 15vw;
+}
+}
+
+@keyframes dotSizeAnimation{
+from{
+width: 30vw;
+height: 30vw;
+}
+to{
+width: 100vw;
+height: 100vh;
+}
+}
+
+@keyframes dotScaleAnimation{
+from{
+width: 0vw;
+height: 0vw;
+}
+to{
+width: 10vw;
+height: 10vw;
+}
+}
+
+.loading-dot {
+width: 10vw;
+height: 10vw;
+background-color: #1d1d1d;
+border-radius: 5vw;
+background-clip: border-box;
+
+
+}
+
+.background-container1{
+background-color: #ffffff;
+}
+.background-container2{
+background-color: #1d1d1d;
+}
+
+
+.second-left-dot0{
+width: 0vw;
+height: 0vw;
+background-color: #ffffff;
+animation: dotScaleAnimation .5s 1.5s forwards ,leftDotAnimation .5s 2.5s 2 alternate , dotLengthAnimation .5s 3.5s forwards , dotHeightAnimation .5s 4s forwards;
+
+}
+.second-right-dot0{
+width: 0vw;
+height: 0vw;
+background-color: #ffffff;
+animation: dotScaleAnimation .5s 1.5s forwards , rightDotAnimation .5s 2.5s 2 alternate;
+}
+
+.second-left-dot2{
+width: 0vw;
+height: 0vw;
+background-color: #ffffff;
+animation: dotScaleAnimation .5s forwards ,leftDotAnimation .5s 1s 2 alternate , dotLengthAnimation .5s 2s forwards , dotHeightAnimation .5s 2.5s forwards;
+
+}
+.second-right-dot2{
+width: 0vw;
+height: 0vw;
+background-color: #ffffff;
+animation: dotScaleAnimation .5s  forwards , rightDotAnimation .5s 1s 2 alternate;
+}
+
+
+.second-left-dot1{
+width: 0vw;
+height: 0vw;
+background-color: #1d1d1d;
+animation: dotScaleAnimation .5s  forwards ,leftDotAnimation .5s 1s 2 alternate , dotLengthAnimation .5s 2s forwards , dotHeightAnimation .5s 2.5s forwards;
+}
+.second-right-dot1{
+width: 0vw;
+height: 0vw;
+background-color: #1d1d1d;
+animation: dotScaleAnimation .5s  forwards , rightDotAnimation .5s 1s 2 alternate;
+}
+
+
+@keyframes leftDotAnimation{
+from{
+transform: translateX(0);
+}
+to{
+transform: translateX(10vw);
+}
+
+}
+
+.left-dot{
+animation: leftDotAnimation .5s 2 alternate , dotLengthAnimation .5s 1s forwards , dotHeightAnimation .5s 1.5s forwards;
+}
+@keyframes rightDotAnimation{
+from{
+transform: translateX(0);
+}
+to{
+transform: translateX(-10vw);
+}
+
+}
+
+.right-dot{
+animation: rightDotAnimation .5s 2 alternate;
+
+}
+
+@keyframes clip1Animation{
+from{
+clip-path: circle(0vw at 50% 50%);
+}
+to{
+clip-path: circle(10vw at 50% 50%);
+}
+
+}
+@keyframes clip1FullAnimation{
+from{
+clip-path: circle(10vw at 50% 50%);
+}
+to{
+clip-path: circle(calc(100vw + 100vh) at 50% 50%);
+}
+
+}
+
+.clip1{
+clip-path: circle(0vw at 50% 50%);
+
+animation: clip1Animation .5s 1.5s forwards,  clip1FullAnimation .5s 2s forwards;
+}
+
+.clip2{
+clip-path: circle(0vw at 50% 50%);
+
+animation: clip1Animation .5s forwards,  clip1FullAnimation .5s .5s forwards;
+}
+.clip3{
+clip-path: circle(0vw at 50% 50%);
+
+animation: clip1FullAnimation .5s .5s forwards;
+}
+  </style>
+</head>
+<body>
+  <script src="flutter_bootstrap.js" async></script>
+
+  <div class="loading-dot-container background-container1" id="container1">
+    <div class="loading-dot left-dot"></div>
+    <div class="loading-dot right-dot"></div>
+  </div>
+
+  <div class="loading-dot-container background-container2 clip1"  id="container2">
+    <div class="loading-dot second-left-dot0"></div>
+    <div class="loading-dot second-right-dot0"></div>
+  </div>
+</body>
+</html>
